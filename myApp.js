@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+require('dotenv').config({ path: 'sample.env' }); // Ensure this points to the correct env file
 
 mongoose
 	.connect(process.env.MONGO_URI, {
@@ -9,9 +9,10 @@ mongoose
 	.then(() =>
 		console.log('Database connected successfully')
 	)
-	.catch((err) =>
-		console.error('Database connection error:', err)
-	);
+	.catch((err) => {
+		console.error('Database connection error:', err);
+		process.exit(1); // Exit the process with an error code
+	});
 
 let Person;
 
