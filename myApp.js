@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ path: 'sample.env' }); // Ensure this points to the correct env file
+require('dotenv').config();
 
 mongoose
 	.connect(process.env.MONGO_URI, {
