@@ -1,54 +1,68 @@
+const mongoose = require('mongoose');
 require('dotenv').config();
 
+console.log('MONGO_URI:', process.env.MONGO_URI);
+
+mongoose
+	.connect(process.env.MONGO_URI, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(() =>
+		console.log('Database connected successfully')
+	)
+	.catch((err) =>
+		console.error('Database connection error:', err)
+	);
 
 let Person;
 
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findOneByFood = (food, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
+	const foodToAdd = 'hamburger';
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findAndUpdate = (personName, done) => {
-  const ageToSet = 20;
+	const ageToSet = 20;
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const removeById = (personId, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
+	const nameToRemove = 'Mary';
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const queryChain = (done) => {
-  const foodToSearch = "burrito";
+	const foodToSearch = 'burrito';
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 /** **Well Done !!**
